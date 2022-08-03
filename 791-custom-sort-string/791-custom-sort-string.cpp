@@ -1,4 +1,10 @@
-class cmpr{
+
+
+class Solution {
+public:
+    map<char,int> mp;
+    
+    class cmpr{
         public:
         map<char,int> m;
         cmpr(map<char,int> &mp){
@@ -9,10 +15,6 @@ class cmpr{
             return m[a]<m[b];
         }  
 };
-
-class Solution {
-public:
-    map<char,int> mp;
     
     string customSortString(string order, string s) {
         for(int i=0; i<order.size(); i++){
