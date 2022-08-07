@@ -5,7 +5,7 @@ public:
     int dp[20005][6];
     
     unordered_map<char,set<char>> mp;
-    map<char,int> val;
+    unordered_map<char,int> val;
     int cntFun(int i, char p){
         if(i==N){
             return 1;
