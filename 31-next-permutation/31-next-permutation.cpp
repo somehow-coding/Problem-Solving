@@ -1,5 +1,17 @@
 class Solution {
 public:
+    /*
+    [1, 2, 3]
+    "123" "132"
+        
+    //this is good example
+    [5, 2, 4, 3, 1]
+    [5, 3, 4, 2, 1]
+    [5, 3, 1, 2, 4]
+    
+    [5, 4, 3, 2, 1]
+    
+    */
     
     /*
     function returning index of element having value just greater than val
