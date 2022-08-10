@@ -28,7 +28,16 @@ public:
     become positive.
     */
     
+    int cnt(vector<int> &nums, int val){
+        int c = 0;
+        for(int num: nums){
+            c += (num<=val);
+        }
+        return c;
+    }
+    
     int findDuplicate(vector<int>& nums) {
+        /*
         //approach: multiplying with -1.
         int duplicate = -1;
         for(int i=0; i<size(nums);i++){
@@ -47,5 +56,24 @@ public:
             }
         }
         return duplicate;
+        */
+        
+        /*
+        binary search:
+        if we know for any element the count of the elements which are less than equal to that element
+        is greater than it than the duplicate lies in the range [1, element] and vice-versa.
+        */
+        
+        int low = 1, high = size(nums) -1, mid;
+        while(low<=high){
+            mid = (low + high)/2;
+            if(cnt(nums,mid)>mid){
+                high = mid-1;
+            }
+            else{
+                low = mid + 1;
+            }
+        }
+        return low;
     }
 };
