@@ -6,12 +6,11 @@ public:
         for(int num: nums) mp[num]++;
         int retlen = 0;
         
-        for(auto [key, val]: mp){
-            cout<<"["<<key<<"]"<<" "<<val<<endl;
-        }
+        // for(auto [key, val]: mp){
+        //     cout<<"["<<key<<"]"<<" "<<val<<endl;
+        // }
         
         for(auto &p: mp){
-            cout<<p.first<<endl;
             if(p.second==0){
                 continue;
             }
