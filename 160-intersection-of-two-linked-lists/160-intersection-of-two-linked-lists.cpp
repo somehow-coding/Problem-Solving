@@ -36,7 +36,34 @@ public:
         return ret;
     }
     
+    /*
+    1->2->3->4
+    5->6->7
+    */
+    
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        return fun(headA, headB);
+        //recursive approach.
+        
+        // return fun(headA, headB);
+        
+        // a kind of cyclic approach will also work (no prove) but the method is simple
+        // keep two pointers
+        // traverse both simulataneously and then if someone become null point it again
+        // to the start of the list.
+        
+        //how it works...(no prove + intutition it is just working)
+        
+        ListNode* ptr1 = headA, *ptr2 = headB;
+        if(!ptr1 and !ptr2) return NULL;
+        while(ptr1 and ptr2 and ptr1!=ptr2){
+            ptr1 = ptr1->next;
+            ptr2 = ptr2->next;
+            if(ptr1 == ptr2){
+                return ptr1;
+            }
+            if(!ptr1) ptr1 = headA;
+            if(!ptr2) ptr2 = headB;
+        }
+        return ptr1;
     }
 };
