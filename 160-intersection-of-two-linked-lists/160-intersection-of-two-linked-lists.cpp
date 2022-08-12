@@ -51,7 +51,7 @@ public:
         // traverse both simulataneously and then if someone become null point it again
         // to the start of the list.
         
-        //how it works...(no prove + intutition it is just working)
+        //how it works...(no prove + no intutition it is just working)
         
         ListNode* ptr1 = headA, *ptr2 = headB;
         if(!ptr1 and !ptr2) return NULL;
