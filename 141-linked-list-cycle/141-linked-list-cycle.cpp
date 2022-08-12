@@ -26,13 +26,25 @@ public:
         
         //approach 2:
         //modifying the values 
-        ListNode* ptr = head; 
-        while(ptr){
-            if(ptr->val==INT_MAX){
+        // ListNode* ptr = head; 
+        // while(ptr){
+        //     if(ptr->val==INT_MAX){
+        //         return true;
+        //     }
+        //     ptr->val = INT_MAX;
+        //     ptr = ptr->next;
+        // }
+        // return false;
+        
+        //pproach 3:
+        //using slow and fast pointers.
+        ListNode* fast = head, *slow = head;
+        while(slow and fast and fast->next){
+            slow = slow->next;
+            fast = fast->next->next;
+            if(slow==fast){
                 return true;
             }
-            ptr->val = INT_MAX;
-            ptr = ptr->next;
         }
         return false;
     } 
