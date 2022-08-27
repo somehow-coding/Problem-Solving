@@ -41,7 +41,11 @@ public:
                     //greater than or equal to left_max is that if it wasn't 
                     //there we might not have reached here at the cur height.
                     //so there must be a greate height on right than only we 
-                    // are able to move from left most height to uptil now(left)
+                    //are able to move from left most height to uptil now(left)
+                    //Can also think like this that left_max is upadated only
+                    //when there is height in right which is greater or equal 
+                    //than cur height i.e upadation will be there only when
+                    //we enter the if block: if(height[left]<=height[right]){enter;}
                     water_trapped += (left_max-height[left]);
                 }
                 left++;
