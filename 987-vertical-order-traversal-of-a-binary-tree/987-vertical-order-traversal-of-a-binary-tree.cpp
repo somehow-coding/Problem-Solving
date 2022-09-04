@@ -17,7 +17,6 @@ public:
                 if(node->right) Q.push({node->right, axis+1});
             }
             for(auto &it : m){
-                cout<<it.first<<" ";
                 sort(it.second.begin(),it.second.end());
                 for(int x: it.second){
                     mp[it.first].push_back(x);
