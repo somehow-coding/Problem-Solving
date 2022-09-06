@@ -7,14 +7,14 @@ public:
         
         long sum = 0;
         
-        while(i < nums.size()) {
-            sum += nums[i];
-            
-            while(j < i and (nums[i] * 1LL * ( i - j + 1) - sum) > k) {
+        while(i < nums.size()) {            
+            while(j < i and (nums[i] * 1LL * ( i - j) - sum) > k) {
                 sum -= nums[j++];
             }
             
             maxi = max(maxi, i - j + 1);
+            
+            sum += nums[i];
             
             i++;
         }
