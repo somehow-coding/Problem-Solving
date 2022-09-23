@@ -18,16 +18,39 @@ public:
         
 //         return j;
         
-        unordered_set<int> st;
+//         unordered_set<int> st;
         
-        for(int i : nums) st.insert(i);
+//         for(int i : nums) st.insert(i);
         
-        int i = 1;
+//         int i = 1;
         
-        for(int i = 1; i <= 1e5 + 1; i++) {
-            if(st.count(i) == 0) return i;
+//         for(int i = 1; i <= 1e5 + 1; i++) {
+//             if(st.count(i) == 0) return i;
+//         }
+        
+//         return -1;
+        
+        
+        int N = nums.size();
+        
+        nums.push_back(0);
+        
+        int k = 1e6;
+        
+        for(int i = 0; i < N; i++) {
+            if(nums[i] < 0) nums[i] = 0;
+            if(nums[i] >= 1e6) nums[i] = 0;
+        }
+
+        for(int i = 0; i < N; i++) {
+            if(nums[i] % k <= 0 or nums[i] % k > N) continue;
+            nums[nums[i] % (k)] = ((nums[nums[i] % k]) % k) + k;
         }
         
-        return -1;
+        for(int i = 1; i <= N; i++) {
+            if(nums[i] < k) return i;
+        }
+        
+        return N + 1;
     }
 };
